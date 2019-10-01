@@ -11,7 +11,7 @@ class UsersService
 	public function   __construct(){
 		$this->usersModel = new UsersModel();
 	}
-
+	// manda la variable al modelo para que se realice la consulta
 	public function getAllUsers(){
 		$users=$this->usersModel->getAllUsers();
 		return $users;
@@ -26,7 +26,7 @@ class UsersService
 			"email" => $formData['email']
 			);
 
-		$user = $this->usersModel->addUser($data);
+		$user = $this->usersModel->addUser($data); 
 		return $user;
 	}
 	public function getUserById($id_user){
